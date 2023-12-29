@@ -5,27 +5,19 @@ import {
 } from "./utils/types";
 import Wallet from "./components/Wallet";
 import { Toaster } from "./components/ui/Toaster";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import useResizeObserver from "use-resize-observer";
 import { getInjectedInfo } from "./utils/injected";
 import { useToast } from "./components/ui/use-toast";
 import { isDataURI } from "./utils/functions";
 import { ToastAction } from "./components/ui/toast";
-// import SupportedWallets from "./components/SupportedWallets";
-// import {
-//   letterVariant,
-//   sentenceVariant,
-//   textVariants,
-//   warningVariants,
-// } from "./components/ui/animationVariants";
+
 import AddWindowProvider from "./components/AddWindowProvider";
 
 const headingText = "Discovered Wallets";
-
 interface CustomEventMap {
   "eip6963:announceProvider": CustomEvent<EIP6963AnnounceProviderEvent>;
 }
-
 declare global {
   interface Document {
     addEventListener<K extends keyof CustomEventMap>(
@@ -154,7 +146,6 @@ function App() {
         onAnnounceProvider as EventListener
       );
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   async function connectProvider(selectedProvider: EVMProviderDetected) {
@@ -274,7 +265,7 @@ function App() {
                     />
                   </svg>
                 </motion.button>
-              )} */}asdfgjui
+              )} */}
             </>
           )}
         </div>
